@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Agile Dashboard</h1>
+
+<table>
+  <thead>
+        <%@status.each do |status| %>
+          <th><%=status%></th>
+        <%end%>
+  </thead>
+
+  <tbody>
+    <%@status.each do |status| %>
+      <td>
+        <table>
+          <tbody>
+            <% Ticket.with(status).each do |ticket| %>
+              <tr>
+                <td><%= link_to "#{ticket.title}, #{ticket.priority_field}", edit_ticket_path(ticket.id) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </td>
+    <%end%>
+  </tbody>
+</table>
+
+<%= link_to 'All Tickets', tickets_path %>
+<%= link_to 'New Ticket', new_ticket_path %>

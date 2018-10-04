@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  status: MyText
+  assignee: 1
+  creator: 1
+  priority_field: MyString
+
+two:
+  title: MyString
+  description: MyText
+  status: MyText
+  assignee: 1
+  creator: 1
+  priority_field: MyString

@@ -23,17 +23,17 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.select :status, [['Backlog','backlog'], ['In progress','in_progress'], ['Done', 'done'], ['QA verified','qa_verified']], id: :ticket_status %>
+    <%= form.select :status, [['Backlog','backlog'], ['In progress','in progress'], ['Done', 'done'], ['QA verified','qa verified']], id: :ticket_status %>
   </div>
 
   <div class="field">
     <%= form.label :assignee %>
-    <%= form.number_field :assignee, id: :ticket_assignee %>
+    <%= form.select  :assignee, User.all.collect{|u| [u.full_name, u.id.to_i]}, id: :ticket_assignee %>
   </div>
 
   <div class="field">
     <%= form.label :creator %>
-    <%= form.number_field :creator, id: :ticket_creator %>
+    <%= form.select  :creator, User.all.collect{|u| [u.full_name, u.id.to_i]},  id: :ticket_creator %>
   </div>
 
   <div class="field">

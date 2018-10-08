@@ -21,8 +21,8 @@
         <td><%= ticket.title %></td>
         <td><%= ticket.description %></td>
         <td><%= ticket.status %></td>
-        <td><%= ticket.assignee %></td>
-        <td><%= ticket.creator %></td>
+        <td><%= ticket.assignee_user.full_name %></td>
+        <td><%= ticket.creator_user.full_name %></td>
         <td><%= ticket.priority_field %></td>
         <td><%= link_to 'Show', ticket %></td>
         <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
